@@ -9,11 +9,11 @@ function addFriend() {
     }else{
         friends.push(document.getElementById('friend').value);
         document.getElementById('friend').value = '';
-        listFriends();
+        listarAmigos();
     }
 }
 
-function listFriends() {
+function listarAmigos() {
     let list = document.getElementById('listaAmigos');
     list.innerHTML = '';
     friends.forEach(friend => {
@@ -23,27 +23,22 @@ function listFriends() {
     });
 }
 
-function cleanFriends() {
+function limpiarAmigos() {
     let list = document.getElementById('listaAmigos');
     friends = [];
     list.innerHTML = '';
 
 }
 
-function circumventFriend(){
+function sortearAmigo(){
 
     if(friends.length === 0){
         alert('No hay amigos en la lista');
     }else{
-
-        let sort = numberFriends();
-        let name = friends[sort];
-        console.log(sort);
-        console.log(name);
-        console.log(friends);
+        let name = friends[numberFriends()];
         let resultado = document.getElementById('resultado');
         resultado.innerHTML = `El amigo sorteado es ${name}`;
-        cleanFriends();
+        limpiarAmigos();
 
     }
 }
